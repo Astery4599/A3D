@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog sobre eventos e notícias da FACS">
+    <title>BLOGFACS | Notícias e Eventos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+      
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.2rem;
+            color: #666;
+            grid-column: 1 / -1;
+        }
+        
+        .search-loading {
+            display: none;
+            text-align: center;
+            padding: 1rem;
+            grid-column: 1 / -1;
+        }
+        
+        .search-loading.active {
+            display: block;
+        }
+        
+        
+        .footer-anchor {
+            display: block;
+            position: relative;
+            top: -80px; 
+            visibility: hidden;
+        }
+        
+      
+        .last-post-highlight {
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="WhatsApp_Image_2025-06-05_at_15.35.04-removebg-preview.png" alt="Logo BLOGFACS" class="logo">
+                    <h1 class="site-title">BLOGFACS</h1>
+                </div>
+                
+                <nav class="main-nav">
+                    <button class="menu-toggle" aria-label="Menu">
+                        <span class="menu-icon"></span>
+                    </button>
+                    
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li><a href="#sobre-footer" class="nav-link">Sobre</a></li>
+                        <li><a href="#ultimo-post" class="nav-link">Último Post</a></li>
+                        <li><a href="#contato-footer" class="nav-link">Contato</a></li>
+                    </ul>
+                    
+                    <div class="search-box">
+                        <form id="search-form">
+                            <input type="text" id="search-input" placeholder="Buscar..." class="search-input" required
+                                   list="search-suggestions">
+                            <datalist id="search-suggestions"></datalist>
+                            <button type="submit" class="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        <section class="featured-post">
+            <div class="container">
+                <article class="featured-article" id="featured-post">
+                    <div class="featured-image">
+                        <img src="copafacs.png" alt="Copa FACS">
+                    </div>
+                    <div class="featured-content">
+                        <span class="category-badge">Esportes</span>
+                        <h2 class="featured-title">Copa FACS: Primeiro dia cheio de emoções</h2>
+                        <p class="featured-excerpt">O primeiro dia da Copa FACS foi marcado por goleadas e viradas emocionantes em várias modalidades esportivas.</p>
+                        <a href="#" class="read-more-btn">Continue lendo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="carousel-section">
+            <div class="container">
+                <h2 class="section-title">Destaques em Fotos</h2>
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <img src="integraçao.jpg" alt="Evento acadêmico">
+                            <div class="slide-caption">Evento de integração</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="santamoinica.jpg" alt="Campus">
+                            <div class="slide-caption">Nossas instalações</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="essa.jpeg" alt="Aula prática">
+                            <div class="slide-caption">Atividades práticas</div>
+                        </div>
+                    </div>
+                    <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-dots">
+                        <button class="dot active"></button>
+                        <button class="dot"></button>
+                        <button class="dot"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="recent-posts">
+            <div class="container">
+                <h2 class="section-title">Últimas Publicações</h2>
+                
+               
+                <span id="ultimo-post" class="footer-anchor"></span>
+                <div id="last-post-container" class="last-post-highlight" style="display: none;">
+                  
+                </div>
+                
+                <div id="posts-container" class="posts-grid">
+                    <div class="search-loading" id="search-loading">
+                        <i class="fas fa-spinner fa-spin"></i> Pesquisando...
+                    </div>
+                  
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <div class="container">
+            
+            <span id="sobre-footer" class="footer-anchor"></span>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">Sobre o BLOGFACS</h3>
+                    <p>O blog oficial de notícias e eventos da faculdade, trazendo as últimas atualizações sobre esportes, atividades acadêmicas e vida estudantil.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-title">Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#sobre-footer">Sobre</a></li>
+                        <li><a href="#ultimo-post">Último Post</a></li>
+                        <li><a href="#contato-footer">Contato</a></li>
+                    </ul>
+                </div>
+
+            
+                <span id="contato-footer" class="footer-anchor"></span>
+                <div class="footer-col">
+                    <h3 class="footer-title">Contato</h3>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> feira de santana - BA</p>
+                        <p><i class="fas fa-phone"></i> (75) 1234-5678</p>
+                        <p><i class="fas fa-envelope"></i> contato@blogfacs.br</p>
+                    </address>
+                </div>
+
+                <div class="footer-col">
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      
+        
+    </script>
+    <script src="carousel.js"></script>
+</body>
+</html>
